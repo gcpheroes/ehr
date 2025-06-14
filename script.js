@@ -1,75 +1,100 @@
 // script.js
 
-// ─── Question Data ─────────────────────────────────────────────────────────
+// ─── Question Bank ─────────────────────────────────────────────────────────
 const questions = [
   {
-    "question": "For this question, refer to the TerramEarth case study. TerramEarth's CTO wants to use the raw data from connected vehicles to help identify approximately when a vehicle in the field will have a catastrophic failure.\nYou want to allow analysts to centrally query the vehicle data.\nWhich architecture should you recommend?",
+    "question": "For this question, refer to the EHR Healthcare case study. You are responsible for ensuring that EHR's use of Google Cloud will pass an upcoming privacy compliance audit. What should you do? (Choose two.)",
     "options": [
-      "https://www.examtopics.com/assets/media/exam-media/04339/0002600001.png",
-      "https://www.examtopics.com/assets/media/exam-media/04339/0002700001.png",
-      "https://www.examtopics.com/assets/media/exam-media/04339/0002800001.png",
-      "https://www.examtopics.com/assets/media/exam-media/04339/0002900001.png"
+      "Verify EHR's product usage against the list of compliant products on the Google Cloud compliance page.",
+      "Advise EHR to execute a Business Associate Agreement (BAA) with Google Cloud.",
+      "Use Firebase Authentication for EHR's user facing applications.",
+      "Implement Prometheus to detect and prevent security breaches on EHR's web-based applications.",
+      "Use GKE private clusters for all Kubernetes workloads."
     ],
     "answer": [
-      "https://www.examtopics.com/assets/media/exam-media/04339/0002600001.png"
-    ],
-    "multiple": false,
-    "explanation": "Load balancer -> GCE -> Pub/Sub -> Dataflow -> BigQuery -> Analysts. This represents a scalable data pipeline where raw data is streamed to BigQuery for centralized querying. This fits the use case of enabling predictive analysis on a global scale."
-  },
-  {
-    "question": "Your company's user-feedback portal comprises a standard LAMP stack replicated across two zones. It is deployed in the us-central1 region and uses autoscaled managed instance groups on all layers, except the database. Currently, only a small group of select customers have access to the portal. The portal meets a 99,99% availability SLA under these conditions. However next quarter, your company will be making the portal available to all users, including unauthenticated users. You need to develop a resiliency testing strategy to ensure the system maintains the SLA once they introduce additional user load.\n\nWhat should you do?",
-    "options": [
-      "Capture existing users input, and replay captured user load until autoscale is triggered on all layers. At the same time, terminate all resources in one of the zones",
-      "Create synthetic random user input, replay synthetic load until autoscale logic is triggered on at least one layer, and introduce \u05d2\u20acchaos\u05d2\u20ac to the system by terminating random resources on both zones",
-      "Expose the new system to a larger group of users, and increase group size each day until autoscale logic is triggered on all layers. At the same time, terminate random resources on both zones",
-      "Capture existing users input, and replay captured user load until resource utilization crosses 80%. Also, derive estimated number of users based on existing user's usage of the app, and deploy enough resources to handle 200% of expected load"
-    ],
-    "answer": [
-      "Create synthetic random user input, replay synthetic load until autoscale logic is triggered on at least one layer, and introduce \u05d2\u20acchaos\u05d2\u20ac to the system by terminating random resources on both zones"
-    ],
-    "multiple": false
-  },
-  {
-    "question": "One of the developers on your team deployed their application in Google Container Engine with the Dockerfile below. They report that their application deployments are taking too long.\n\nhttps://www.examtopics.com/assets/media/exam-media/04339/0008300001.png\n\nYou want to optimize this Dockerfile for faster deployment times without adversely affecting the app's functionality.\n\nWhich two actions should you take? (Choose two.)",
-    "options": [
-      "Remove Python after running pip",
-      "Remove dependencies from requirements.txt",
-      "Use a slimmed-down base image like Alpine Linux",
-      "Use larger machine types for your Google Container Engine node pools",
-      "Copy the source after he package dependencies (Python and pip) are installed"
-    ],
-    "answer": [
-      "Use a slimmed-down base image like Alpine Linux",
-      "Copy the source after he package dependencies (Python and pip) are installed"
+      "Verify EHR's product usage against the list of compliant products on the Google Cloud compliance page.",
+      "Advise EHR to execute a Business Associate Agreement (BAA) with Google Cloud."
     ],
     "multiple": true
   },
   {
-    "question": "For this question, refer to the TerramEarth case study. TerramEarth has a legacy web application that you cannot migrate to cloud. However, you still want to build a cloud-native way to monitor the application. If the application goes down, you want the URL to point to a \"Site is unavailable\" page as soon as possible. You also want your Ops team to receive a notification for the issue. You need to build a reliable solution for minimum cost. What should you do?",
+    "question": "For this question, refer to the EHR Healthcare case study. You need to define the technical architecture for securely deploying workloads to Google Cloud. You also need to ensure that only verified containers are deployed using Google Cloud services. What should you do? (Choose two.)",
     "options": [
-      "Create a scheduled job in Cloud Run to invoke a container every minute. The container will check the application URL. If the application is down, switch the URL to the \"Site is unavailable\" page, and notify the Ops team.",
-      "Create a cron job on a Compute Engine VM that runs every minute. The cron job invokes a Python program to check the application URL. If the application is down, switch the URL to the \"Site is unavailable\" page, and notify the Ops team.",
-      "Create a Cloud Monitoring uptime check to validate the application URL. If it fails, put a message in a Pub/Sub queue that triggers a Cloud Function to switch the URL to the \"Site is unavailable\" page, and notify the Ops team.",
-      "Use Cloud Error Reporting to check the application URL. If the application is down, switch the URL to the \"Site is unavailable\" page, and notify the Ops team."
+      "Enable Binary Authorization on GKE, and sign containers as part of a CI/CD pipeline.",
+      "Configure Jenkins to utilize Kritis to cryptographically sign a container as part of a CI/CD pipeline.",
+      "Configure Container Registry to only allow trusted service accounts to create and deploy containers from the registry.",
+      "Configure Container Registry to use vulnerability scanning to confirm that there are no vulnerabilities before deploying the workload."
     ],
     "answer": [
-      "Create a Cloud Monitoring uptime check to validate the application URL. If it fails, put a message in a Pub/Sub queue that triggers a Cloud Function to switch the URL to the \"Site is unavailable\" page, and notify the Ops team."
+      "Enable Binary Authorization on GKE, and sign containers as part of a CI/CD pipeline.",
+      "Configure Container Registry to use vulnerability scanning to confirm that there are no vulnerabilities before deploying the workload."
+    ],
+    "multiple": true
+  },
+  {
+    "question": "You need to upgrade the EHR connection to comply with their requirements. The new connection design must support business-critical needs and meet the same network and security policy requirements. What should you do?",
+    "options": [
+      "Add a new Dedicated Interconnect connection.",
+      "Upgrade the bandwidth on the Dedicated Interconnect connection to 100 G.",
+      "Add three new Cloud VPN connections.",
+      "Add a new Carrier Peering connection."
+    ],
+    "answer": [
+      "Add a new Dedicated Interconnect connection."
     ],
     "multiple": false
   },
   {
-    "question": "For this question, refer to the Helicopter Racing League (HRL) case study. Recently HRL started a new regional racing league in Cape Town, South Africa. In an effort to give customers in Cape Town a better user experience, HRL has partnered with the Content Delivery Network provider, Fastly. HRL needs to allow traffic coming from all of the Fastly IP address ranges into their Virtual Private Cloud network (VPC network). You are a member of the HRL security team and you need to configure the update that will allow only the Fastly IP address ranges through the External HTTP(S) load balancer. Which command should you use?",
+    "question": "For this question, refer to the EHR Healthcare case study. You need to define the technical architecture for hybrid connectivity between EHR's on-premises systems and Google Cloud. You want to follow Google's recommended practices for production-level applications. Considering the EHR Healthcare business and technical requirements, what should you do?",
     "options": [
-      "gcloud compute security-policies rules update 1000 \\\n-- security-policy from-fastly \\ \n-- src-ip-ranges * \\\n-- action \"allow\"",
-      "gcloud firewall rules update sourceiplist-fastly \\\n-- priority 1000 \\ \n-- allow tcp:443",
-      "gcloud firewall rules update hlr-policies \\\n-- priority 1000 \\ \n-- target-tags=sourceiplist-fastly \\\n-- allow tcp:443",
-      "gcloud compute security-policies rules update 1000 \\\n-- security-policy hlr-policy \\ \n-- expression \"evaluatePreconfiguredExpr ('sourceiplist-fastly')\" \\\n-- action \"allow\""
+      "Configure two Partner Interconnect connections in one metro (City), and make sure the Interconnect connections are placed in different metro zones.",
+      "Configure two VPN connections from on-premises to Google Cloud, and make sure the VPN devices on-premises are in separate racks.",
+      "Configure Direct Peering between EHR Healthcare and Google Cloud, and make sure you are peering at least two Google locations.",
+      "Configure two Dedicated Interconnect connections in one metro (City) and two connections in another metro, and make sure the Interconnect connections are placed in different metro zones."
     ],
     "answer": [
-      "gcloud compute security-policies rules update 1000 \\\n-- security-policy from-fastly \\ \n-- src-ip-ranges * \\\n-- action \"allow\""
+      "Configure two Dedicated Interconnect connections in one metro (City) and two connections in another metro, and make sure the Interconnect connections are placed in different metro zones."
     ],
-    "multiple": false,
-    "explanation": "NOTE!!!: The suggested correct answer above is from Exam Topics. There are comments about the answer in Exam Topics for this question is wrong and it should have been gcloud compute security-policies rules update 1000 \\\n-- security-policy hlr-policy \\ \n-- expression \"evaluatePreconfiguredExpr ('sourceiplist-fastly')\" \\\n-- action \"allow\". It is up to you to decide which option you pick because nobody knows the right answer to this. Fun Fact: ChatGPT, Perplexity, Gemini and Grok are all saying gcloud compute security-policies rules update 1000 \\\n-- security-policy hlr-policy \\ \n-- expression \"evaluatePreconfiguredExpr ('sourceiplist-fastly')\" \\\n-- action \"allow\" is the correct answer."
+    "multiple": false
+  },
+  {
+    "question": "For this question, refer to the EHR Healthcare case study. You are a developer on the EHR customer portal team. Your team recently migrated the customer portal application to Google Cloud. The load has increased on the application servers, and now the application is logging many timeout errors. You recently incorporated Pub/Sub into the application architecture, and the application is not logging any Pub/Sub publishing errors. You want to improve publishing latency. What should you do?",
+    "options": [
+      "Increase the Pub/Sub Total Timeout retry value.",
+      "Move from a Pub/Sub subscriber pull model to a push model.",
+      "Turn off Pub/Sub message batching.",
+      "Create a backup Pub/Sub message queue."
+    ],
+    "answer": [
+      "Turn off Pub/Sub message batching."
+    ],
+    "multiple": false
+  },
+  {
+    "question": "For this question, refer to the EHR Healthcare case study. In the past, configuration errors put public IP addresses on backend servers that should not have been accessible from the Internet. You need to ensure that no one can put external IP addresses on backend Compute Engine instances and that external IP addresses can only be configured on frontend Compute Engine instances. What should you do?",
+    "options": [
+      "Create an Organizational Policy with a constraint to allow external IP addresses only on the frontend Compute Engine instances.",
+      "Revoke the compute.networkAdmin role from all users in the project with front end instances.",
+      "Create an Identity and Access Management (IAM) policy that maps the IT staff to the compute.networkAdmin role for the organization.",
+      "Create a custom Identity and Access Management (IAM) role named GCE_FRONTEND with the compute.addresses.create permission."
+    ],
+    "answer": [
+      "Create an Organizational Policy with a constraint to allow external IP addresses only on the frontend Compute Engine instances."
+    ],
+    "multiple": false
+  },
+  {
+    "question": "For this question, refer to the EHR Healthcare case study. You are responsible for designing the Google Cloud network architecture for Google Kubernetes\nEngine. You want to follow Google best practices. Considering the EHR Healthcare business and technical requirements, what should you do to reduce the attack surface?",
+    "options": [
+      "Use a private cluster with a private endpoint with master authorized networks configured.",
+      "Use a public cluster with firewall rules and Virtual Private Cloud (VPC) routes.",
+      "Use a private cluster with a public endpoint with master authorized networks configured.",
+      "Use a public cluster with master authorized networks enabled and firewall rules."
+    ],
+    "answer": [
+      "Use a private cluster with a private endpoint with master authorized networks configured."
+    ],
+    "multiple": false
   },
 ];
 
